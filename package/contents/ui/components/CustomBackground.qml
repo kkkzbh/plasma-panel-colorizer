@@ -263,7 +263,7 @@ Rectangle {
 
     Kirigami.Theme.colorSet: Kirigami.Theme[bgColorCfg.systemColorSet]
     color: {
-        if (bgEnabled && rect.bgColorCfg.sourceType !== 5) {
+        if (bgEnabled && rect.bgColorCfg.sourceType < 5) {
             return Utils.getColor(bgColorCfg, targetIndex, null, itemType, rect);
         } else {
             return "transparent";
