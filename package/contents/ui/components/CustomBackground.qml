@@ -280,6 +280,7 @@ Rectangle {
             "bottomLeftRadius": rect.bottomLeftRadius,
             "bottomRightRadius": rect.bottomRightRadius
         }
+        opacity: rect.bgColorCfg.alpha
     }
 
     ImageRoundedRectangle {
@@ -304,6 +305,7 @@ Rectangle {
                 playing = true;
             }
         }
+        opacity: rect.bgColorCfg.alpha
     }
 
     Behavior on color {
