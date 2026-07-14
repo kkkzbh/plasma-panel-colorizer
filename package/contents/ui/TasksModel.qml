@@ -22,15 +22,15 @@ Item {
 
     function getTopTask() {
         let highestTask = null;
-        let maxStackingOrder = 0;
+        let maxStackingOrder = -1;
         for (var i = 0; i < tasksModel.count; i++) {
             const currentTask = tasksModel.index(i, 0);
             if (currentTask === undefined || !tasksModel.data(currentTask, isWindow))
                 continue;
 
-            const staskingOder = tasksModel.data(currentTask, abstractTasksModel.StackingOrder);
-            if (staskingOder > maxStackingOrder) {
-                maxStackingOrder = staskingOder;
+            const stackingOrder = tasksModel.data(currentTask, abstractTasksModel.StackingOrder);
+            if (stackingOrder > maxStackingOrder) {
+                maxStackingOrder = stackingOrder;
                 highestTask = currentTask;
             }
         }
@@ -67,7 +67,7 @@ Item {
             _activeTask = tasksModel.activeTask;
         }
 
-        if (filterByActive && !_activeTask && trackLastActive) {
+        if (!_activeTask && trackLastActive) {
             _activeTask = getTopTask();
             _activeExists = Boolean(_activeTask);
         }
