@@ -75,8 +75,9 @@ PlasmoidItem {
     property var panelState: {
         "fullscreenWindow": tasksModel.fullscreenExists,
         "maximized": tasksModel.maximizedExists,
-        "visibleWindows": tasksModel.visibleExists,
         "touchingWindow": panelElement && panelElement.touchingWindow,
+        "activeWindow": tasksModel.activeExists,
+        "visibleWindows": tasksModel.visibleExists,
         "floating": panelElement && panelElement.floatingness > 0,
         "activity": activityInfo.currentActivity
     }
