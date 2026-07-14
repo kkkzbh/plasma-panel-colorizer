@@ -130,7 +130,6 @@ Item {
                 tasksModel.filterByVirtualDesktop = true;
             }
         }
-        onVirtualDesktopChanged: console.log(virtualDesktop)
     }
 
     function update() {
